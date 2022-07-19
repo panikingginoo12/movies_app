@@ -1,0 +1,68 @@
+.card {
+  display: flex;
+  background-color: white;
+  box-shadow: 0 3px 3px -3px gray;
+  border: 1px solid #d3d3d380;
+  position: relative;
+  flex-direction: column;
+  height: 600px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+    height: 300px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 1px 1px #6161c4;
+  }
+
+  .thumbnail {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 600px) {
+      width: 210px;
+    }
+
+    img {
+      max-width: 100%;
+      padding: 1rem;
+
+      @media (min-width: 600px) {
+        height: 100%;
+      }
+    }
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 3rem;
+    padding: 0.5rem 1rem;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+
+      .rating {
+        color: gray;
+      }
+    }
+
+    .description {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 7;
+
+      @media (min-width: 600px) {
+        -webkit-line-clamp: 9;
+      }
+    }
+  }
+}
